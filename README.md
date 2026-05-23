@@ -6,7 +6,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet)](https://claude.ai)
-[![npm](https://img.shields.io/badge/npm-deep--research--prompt-red)](https://www.npmjs.com/package/deep-research-prompt)
 
 Most research prompts are **vague wishes dressed as instructions**. You write *"research how to build X"* and the AI gives you a generic overview that misses your stack, constraints, and decision context.
 
@@ -15,7 +14,7 @@ Most research prompts are **vague wishes dressed as instructions**. You write *"
 It grills you first — *GrillMe style* — extracts the real context, then synthesizes a structured research prompt that an AI agent can execute with **zero follow-up questions**.
 
 ```bash
-npx deep-research-prompt skills add
+npx skills add KJ-AIML/deep-research-prompt
 ```
 
 Then open your AI assistant and say:
@@ -97,14 +96,7 @@ Every synthesized prompt includes:
 ## 🚀 One-Command Quick Start
 
 ```bash
-npx deep-research-prompt install
-```
-
-Or install globally:
-
-```bash
-npm install -g deep-research-prompt
-deep-research-prompt skills add
+npx skills add KJ-AIML/deep-research-prompt
 ```
 
 Then open your AI assistant and type:
@@ -125,58 +117,40 @@ The skill will grill you, then output a structured prompt you can hand to any ag
 
 ## 🛠️ Platform Support
 
-Register the skill with your AI assistant:
+Install via the [open agent skills ecosystem](https://github.com/vercel-labs/skills) CLI:
 
-| Platform | Install Command |
+| Platform | Command |
 |---|---|
-| Claude Code | `deep-research-prompt skills add` |
-| Codex | `deep-research-prompt skills add --platform codex` |
-| OpenCode | `deep-research-prompt skills add --platform opencode` |
-| Cursor | `deep-research-prompt skills add --platform cursor` |
-| Kimi Code | `deep-research-prompt skills add --platform kimi` |
-| Gemini CLI | `deep-research-prompt skills add --platform gemini` |
-| Aider | `deep-research-prompt skills add --platform aider` |
-| Trae | `deep-research-prompt skills add --platform trae` |
-| Pi coding agent | `deep-research-prompt skills add --platform pi` |
+| Claude Code | `npx skills add KJ-AIML/deep-research-prompt` |
+| Codex | `npx skills add KJ-AIML/deep-research-prompt -a codex` |
+| OpenCode | `npx skills add KJ-AIML/deep-research-prompt -a opencode` |
+| Cursor | `npx skills add KJ-AIML/deep-research-prompt -a cursor` |
+| Kimi Code | `npx skills add KJ-AIML/deep-research-prompt -a kimi-cli` |
+| Gemini CLI | `npx skills add KJ-AIML/deep-research-prompt -a gemini-cli` |
+| Aider | `npx skills add KJ-AIML/deep-research-prompt -a aider` |
+| Trae | `npx skills add KJ-AIML/deep-research-prompt -a trae` |
+| Pi | `npx skills add KJ-AIML/deep-research-prompt -a pi` |
+
+### Global Install
+
+Available across all projects:
+
+```bash
+npx skills add KJ-AIML/deep-research-prompt -g
+```
 
 ### Claude.ai (Web)
 
 1. Download [`skill/deep-research-prompt.skill`](./skill/deep-research-prompt.skill)
 2. In Claude, go to **Settings → Skills → Install from file**
 
-### Project-Scoped Install
-
-Install into the current repo so your team gets it:
+### List / Remove / Update
 
 ```bash
-deep-research-prompt skills add --project
+npx skills list                          # list installed skills
+npx skills remove deep-research-prompt   # uninstall
+npx skills update deep-research-prompt   # update to latest
 ```
-
-This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or equivalent for your platform).
-
-### Install the `.skill` ZIP
-
-For platforms that prefer the packaged skill:
-
-```bash
-deep-research-prompt skills add --platform claude --zip
-```
-
----
-
-## 📋 Command Reference
-
-| Command | Description |
-|---|---|
-| `deep-research-prompt skills add` | Add skill for Claude Code (default) |
-| `deep-research-prompt skills add --platform <name>` | Add for a specific platform |
-| `deep-research-prompt skills add --project` | Add into current project only |
-| `deep-research-prompt skills add --zip` | Add the `.skill` ZIP file |
-| `deep-research-prompt skills remove` | Remove from default platform |
-| `deep-research-prompt skills remove --platform <name>` | Remove from specific platform |
-| `deep-research-prompt list` | List all supported platforms |
-| `deep-research-prompt --version` | Show version |
-| `deep-research-prompt --help` | Show help |
 
 ---
 
