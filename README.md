@@ -223,4 +223,3 @@ PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 MIT — use it, fork it, embed it in your product.
 
-Copyright 2026 Ter (ก้องภพ)

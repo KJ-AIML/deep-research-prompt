@@ -10,7 +10,7 @@
 `deep-research-prompt` is a **Claude Skill** that generates production-ready research prompts. It works by first "grilling" the user with 5–8 targeted questions across four dimensions (Real Problem, Context & Constraints, Scope Control, Output Shape), then synthesizing a structured research prompt that an AI agent swarm can execute autonomously.
 
 **Project type:** Documentation / Prompt-template distribution.  
-**License:** MIT (Copyright 2026 Ter (ก้องภพ)).  
+**License:** MIT.  
 **Language of project:** English (all docs, comments, and templates).
 
 There is **no compiled code, no package manager, and no CI/CD build**. The deliverables are Markdown files and ZIP-packaged `.skill` files consumed by Claude, Claude Code, and Pi coding agent.
