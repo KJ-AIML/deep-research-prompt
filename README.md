@@ -15,7 +15,7 @@ Most research prompts are **vague wishes dressed as instructions**. You write *"
 It grills you first — *GrillMe style* — extracts the real context, then synthesizes a structured research prompt that an AI agent can execute with **zero follow-up questions**.
 
 ```bash
-npx deep-research-prompt install
+npx deep-research-prompt skills add
 ```
 
 Then open your AI assistant and say:
@@ -104,7 +104,7 @@ Or install globally:
 
 ```bash
 npm install -g deep-research-prompt
-deep-research-prompt install
+deep-research-prompt skills add
 ```
 
 Then open your AI assistant and type:
@@ -129,15 +129,15 @@ Register the skill with your AI assistant:
 
 | Platform | Install Command |
 |---|---|
-| Claude Code | `deep-research-prompt install` |
-| Codex | `deep-research-prompt install --platform codex` |
-| OpenCode | `deep-research-prompt install --platform opencode` |
-| Cursor | `deep-research-prompt install --platform cursor` |
-| Kimi Code | `deep-research-prompt install --platform kimi` |
-| Gemini CLI | `deep-research-prompt install --platform gemini` |
-| Aider | `deep-research-prompt install --platform aider` |
-| Trae | `deep-research-prompt install --platform trae` |
-| Pi coding agent | `deep-research-prompt install --platform pi` |
+| Claude Code | `deep-research-prompt skills add` |
+| Codex | `deep-research-prompt skills add --platform codex` |
+| OpenCode | `deep-research-prompt skills add --platform opencode` |
+| Cursor | `deep-research-prompt skills add --platform cursor` |
+| Kimi Code | `deep-research-prompt skills add --platform kimi` |
+| Gemini CLI | `deep-research-prompt skills add --platform gemini` |
+| Aider | `deep-research-prompt skills add --platform aider` |
+| Trae | `deep-research-prompt skills add --platform trae` |
+| Pi coding agent | `deep-research-prompt skills add --platform pi` |
 
 ### Claude.ai (Web)
 
@@ -149,7 +149,7 @@ Register the skill with your AI assistant:
 Install into the current repo so your team gets it:
 
 ```bash
-deep-research-prompt install --project
+deep-research-prompt skills add --project
 ```
 
 This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or equivalent for your platform).
@@ -159,7 +159,7 @@ This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or equivalent for
 For platforms that prefer the packaged skill:
 
 ```bash
-deep-research-prompt install --platform claude --zip
+deep-research-prompt skills add --platform claude --zip
 ```
 
 ---
@@ -168,12 +168,12 @@ deep-research-prompt install --platform claude --zip
 
 | Command | Description |
 |---|---|
-| `deep-research-prompt install` | Install skill for Claude Code (default) |
-| `deep-research-prompt install --platform <name>` | Install for a specific platform |
-| `deep-research-prompt install --project` | Install into current project only |
-| `deep-research-prompt install --zip` | Install the `.skill` ZIP file |
-| `deep-research-prompt uninstall` | Remove from default platform |
-| `deep-research-prompt uninstall --platform <name>` | Remove from specific platform |
+| `deep-research-prompt skills add` | Add skill for Claude Code (default) |
+| `deep-research-prompt skills add --platform <name>` | Add for a specific platform |
+| `deep-research-prompt skills add --project` | Add into current project only |
+| `deep-research-prompt skills add --zip` | Add the `.skill` ZIP file |
+| `deep-research-prompt skills remove` | Remove from default platform |
+| `deep-research-prompt skills remove --platform <name>` | Remove from specific platform |
 | `deep-research-prompt list` | List all supported platforms |
 | `deep-research-prompt --version` | Show version |
 | `deep-research-prompt --help` | Show help |

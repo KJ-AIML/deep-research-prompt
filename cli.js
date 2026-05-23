@@ -154,11 +154,11 @@ deep-research-prompt CLI
 Install the deep-research-prompt skill into any AI coding assistant.
 
 USAGE:
-  deep-research-prompt install [options]       Install the skill
-  deep-research-prompt uninstall [options]     Remove the skill
-  deep-research-prompt list                    List supported platforms
-  deep-research-prompt --version               Show version
-  deep-research-prompt --help                  Show this help
+  deep-research-prompt skills add [options]      Add the skill
+  deep-research-prompt skills remove [options]   Remove the skill
+  deep-research-prompt skills list               List supported platforms
+  deep-research-prompt --version                 Show version
+  deep-research-prompt --help                    Show this help
 
 OPTIONS:
   -p, --platform <name>   Target platform (default: claude)
@@ -171,12 +171,12 @@ PLATFORMS:
     .join('\n  ')}
 
 EXAMPLES:
-  npx deep-research-prompt install
-  npx deep-research-prompt install --platform pi
-  npx deep-research-prompt install --platform codex --project
-  npx deep-research-prompt install --platform cursor --zip
-  npx deep-research-prompt uninstall
-  npx deep-research-prompt uninstall --platform kimi
+  npx deep-research-prompt skills add
+  npx deep-research-prompt skills add --platform pi
+  npx deep-research-prompt skills add --platform codex --project
+  npx deep-research-prompt skills add --platform cursor --zip
+  npx deep-research-prompt skills remove
+  npx deep-research-prompt skills remove --platform kimi
 `);
 }
 
@@ -192,6 +192,19 @@ function parseArgs() {
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     switch (arg) {
+      case 'skills':
+        // peek next arg for subcommand
+        const sub = args[i + 1];
+        if (sub === 'add' || sub === 'remove' || sub === 'list') {
+          result.command = sub === 'add' ? 'install' : sub === 'remove' ? 'uninstall' : 'list';
+          i++;
+        } else {
+          console.error(`Unknown skills subcommand: ${sub || '(none)'}`);
+          console.error(`Expected: skills add, skills remove, skills list`);
+          process.exit(1);
+        }
+        break;
+      // legacy aliases
       case 'install':
       case 'uninstall':
       case 'list':
