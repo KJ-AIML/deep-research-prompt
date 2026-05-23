@@ -1,9 +1,8 @@
 # Example: Forking a Coding Agent to a Private Branded Tool
 
 ## Setup
-User wanted to fork the Pi coding agent (MIT) into a private repo called AXGA,
-rename everything, and use it as the code generation brain inside Axtra Intellion — 
-a backend-first AI code generator SaaS.
+User wanted to fork the Pi coding agent (MIT) into a private repo,
+rename everything, and use it as the code generation brain inside their SaaS product.
 
 ## The Grill (Questions Asked)
 
@@ -45,11 +44,11 @@ Before writing this prompt, I need to understand your situation:
 ## Output Prompt
 
 ```markdown
-# Deep Research Prompt: Complete Private Fork of Pi Coding Agent → AXGA
+# Deep Research Prompt: Complete Private Fork of Pi Coding Agent → MyOrg
 
 ## Mission Statement
 Produce a complete, command-by-command playbook for forking earendil-works/pi 
-(MIT) into a private repo called AXGA — renaming all packages, disabling 
+(MIT) into a private repo called MyOrg — renaming all packages, disabling 
 upstream telemetry, and preserving 100% of CLI/SDK/TUI/provider functionality — 
 so it can be embedded as a headless SDK inside Docker sandbox containers.
 
@@ -78,8 +77,8 @@ so it can be embedded as a headless SDK inside Docker sandbox containers.
 ### 3. Branding Replacement
 - Where APP_NAME and CONFIG_DIR_NAME are defined
 - Full list of hardcoded "pi" strings in user-facing output
-- Environment variable rename (PI_* → AXGA_*)
-- Config directory rename (~/.pi/ → ~/.axga/)
+- Environment variable rename (PI_* → MYORG_*)
+- Config directory rename (~/.pi/ → ~/.myorg/)
 
 ### 4. Telemetry Audit
 - Every network call Pi makes to pi.dev or external endpoints
@@ -108,8 +107,8 @@ so it can be embedded as a headless SDK inside Docker sandbox containers.
 - [ ] MIT compliance checklist
 
 ## Success Criteria
-1. `axga --version` works and shows AXGA branding
-2. `axga -p "list files"` runs without error
+1. `myorg --version` works and shows MyOrg branding
+2. `myorg -p "list files"` runs without error
 3. `grep -r "@earendil-works" packages/` returns zero results
 4. `createAgentSession()` works in a headless Node.js test script
 5. All existing Pi tests pass under new package names

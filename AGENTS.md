@@ -13,7 +13,7 @@
 **License:** MIT (Copyright 2026 Ter (ก้องภพ)).  
 **Language of project:** English (all docs, comments, and templates).
 
-There is **no compiled code, no package manager, and no CI/CD build**. The deliverables are Markdown files and ZIP-packaged `.skill` files consumed by Claude, Claude Code, Pi coding agent, and AXGA.
+There is **no compiled code, no package manager, and no CI/CD build**. The deliverables are Markdown files and ZIP-packaged `.skill` files consumed by Claude, Claude Code, and Pi coding agent.
 
 ---
 
@@ -28,8 +28,8 @@ There is **no compiled code, no package manager, and no CI/CD build**. The deliv
 │   ├── SKILL.md                      # Canonical skill definition (identical to root copy)
 │   └── deep-research-prompt.skill    # Canonical packaged skill (identical to root copy)
 ├── examples/
-│   ├── axga-fork-research.md         # Example: forking a coding agent into a private tool
-│   └── axga-pi-sdk-integration.md    # Example: integrating a headless SDK
+│   ├── fork-coding-agent.md          # Example: forking a coding agent into a private tool
+│   └── pi-sdk-integration.md         # Example: integrating a headless SDK
 ├── .github/ISSUE_TEMPLATE/
 │   ├── bad-output.md                 # Template for quality regression reports
 │   └── new-example.md                # Template for community example submissions
@@ -50,7 +50,7 @@ Every distributable artifact is maintained in **two identical copies**: one at t
 |-------|-----------|-------|
 | Source format | Markdown (YAML front-matter) | `SKILL.md` uses YAML front-matter for skill metadata (`name`, `description`) |
 | Package format | ZIP archive (`.skill`) | The `.skill` files are ZIP archives produced by Claude's skill-packaging tooling. Do not attempt to hand-edit the ZIP contents; edit `SKILL.md` and re-package if necessary. |
-| Runtime | Claude / Claude Code / Pi / AXGA | Consumed by AI agent platforms as a skill/prompt template. No local execution environment. |
+| Runtime | Claude / Claude Code / Pi | Consumed by AI agent platforms as a skill/prompt template. No local execution environment. |
 | Dependencies | None | No `package.json`, `pyproject.toml`, `Cargo.toml`, or equivalent exists. |
 
 ---
@@ -137,9 +137,9 @@ Users install the skill in one of two ways:
 
 2. **Copy `SKILL.md` manually:**
    ```bash
-   # Claude Code / AXGA
-   mkdir -p ~/.axga/agent/skills/deep-research-prompt
-   cp skill/SKILL.md ~/.axga/agent/skills/deep-research-prompt/SKILL.md
+   # Claude Code
+   mkdir -p ~/.claude/skills/deep-research-prompt
+   cp skill/SKILL.md ~/.claude/skills/deep-research-prompt/SKILL.md
 
    # Pi coding agent
    mkdir -p ~/.pi/agent/skills/deep-research-prompt
@@ -176,9 +176,9 @@ For full details, see `CONTRIBUTING.md`.
 | Platform | Status | Install Path |
 |----------|--------|--------------|
 | Claude.ai (Skills) | ✅ Supported | `.skill` file upload |
-| Claude Code | ✅ Supported | `~/.axga/agent/skills/deep-research-prompt/SKILL.md` |
+| Claude Code | ✅ Supported | `~/.claude/skills/deep-research-prompt/SKILL.md` |
 | Pi coding agent | ✅ Supported | `~/.pi/agent/skills/deep-research-prompt/SKILL.md` |
-| AXGA | ✅ Supported | `~/.axga/agent/skills/deep-research-prompt/SKILL.md` |
+
 
 ---
 

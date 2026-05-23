@@ -12,7 +12,7 @@
 
 ## User Answers
 
-- Product: AI-powered backend code generator (Axtra Intellion) — generates FastAPI services from natural language specs
+- Product: AI-powered backend code generator — generates FastAPI services from natural language specs
 - Stack: Bun, TypeScript, Hono API, BullMQ, Docker-in-Docker sandbox
 - Agent role: Generate FastAPI code + call validation tools autonomously
 - Mode: Headless SDK only — no TUI needed, runs inside a Docker container
@@ -29,7 +29,7 @@
 
 ## Mission Statement
 Determine whether Pi SDK (`@earendil-works/pi-coding-agent`) can replace a custom LangGraph
-agent loop as the code generation brain inside Axtra Intellion, running headless inside
+agent loop as the code generation brain inside a SaaS product, running headless inside
 Docker containers with no TTY, calling custom validation tools autonomously.
 
 ## Background & Context

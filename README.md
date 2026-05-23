@@ -5,7 +5,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet)](https://claude.ai)
 [![Pi Agent](https://img.shields.io/badge/Pi-Agent-green)](https://pi.dev)
-[![AXGA](https://img.shields.io/badge/AXGA-Compatible-blue)](https://axga.dev)
 
 ---
 
@@ -91,7 +90,7 @@ Produces a structured research prompt with:
 > 6. What have you already tried or ruled out?  
 > 7. What decision does this research need to unlock?
 
-**Skill outputs:** → [See full example](examples/axga-pi-sdk-integration.md)
+**Skill outputs:** → [See full example](examples/pi-sdk-integration.md)
 
 ---
 
@@ -103,12 +102,12 @@ Produces a structured research prompt with:
 2. In Claude, go to **Settings → Skills**
 3. Click **Install from file** and select the `.skill` file
 
-### Option 2 — Copy SKILL.md manually (Claude Code / Pi / AXGA)
+### Option 2 — Copy SKILL.md manually (Claude Code / Pi)
 
 ```bash
-# Claude Code / AXGA
-mkdir -p ~/.axga/agent/skills/deep-research-prompt
-cp skill/SKILL.md ~/.axga/agent/skills/deep-research-prompt/SKILL.md
+# Claude Code
+mkdir -p ~/.claude/skills/deep-research-prompt
+cp skill/SKILL.md ~/.claude/skills/deep-research-prompt/SKILL.md
 
 # Pi coding agent
 mkdir -p ~/.pi/agent/skills/deep-research-prompt
@@ -140,8 +139,8 @@ Or explicitly mention it:
 
 | Example | Topic |
 |---------|-------|
-| [AXGA Pi SDK Integration](examples/axga-pi-sdk-integration.md) | Integrating Pi SDK headless into a SaaS product |
-| [Forking a Coding Agent](examples/axga-fork-research.md) | Forking Pi into a private branded tool |
+| [Pi SDK Integration](examples/pi-sdk-integration.md) | Integrating Pi SDK headless into a SaaS product |
+| [Forking a Coding Agent](examples/fork-coding-agent.md) | Forking Pi into a private branded tool |
 
 > Want to add your own? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -154,7 +153,7 @@ Or explicitly mention it:
 | Claude.ai (Skills) | ✅ Supported | `.skill` file upload |
 | Claude Code | ✅ Supported | Copy `SKILL.md` |
 | Pi coding agent | ✅ Supported | Copy `SKILL.md` |
-| AXGA | ✅ Supported | Copy `SKILL.md` |
+
 
 ---
 

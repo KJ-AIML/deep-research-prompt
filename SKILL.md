@@ -164,7 +164,7 @@ Before presenting the final prompt, verify:
 **Good:** "What is the minimal Kubernetes setup for a 3-service FastAPI backend on AWS EKS that costs under $200/month, handles 1000 req/s, and can be managed by a solo engineer?"
 
 **Bad:** "How do I fork a GitHub repo?"
-**Good:** "What is the complete file-by-file process to fork Pi (earendil-works/pi, MIT) into a private repo called AXGA, rename all package scopes from @earendil-works to @axga, disable all pi.dev telemetry, and preserve 100% of CLI/SDK/TUI functionality?"
+**Good:** "What is the complete file-by-file process to fork Pi (earendil-works/pi, MIT) into a private repo called MyOrg, rename all package scopes from @earendil-works to @myorg, disable all pi.dev telemetry, and preserve 100% of CLI/SDK/TUI functionality?"
 
 ---
 
