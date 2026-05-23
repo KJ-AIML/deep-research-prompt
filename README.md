@@ -96,22 +96,64 @@ Produces a structured research prompt with:
 
 ## Installation
 
-### Option 1 — Download `.skill` file (Claude.ai)
+### Claude.ai (Web) — `.skill` file
 
 1. Download [`skill/deep-research-prompt.skill`](./skill/deep-research-prompt.skill)
 2. In Claude, go to **Settings → Skills**
 3. Click **Install from file** and select the `.skill` file
 
-### Option 2 — Copy SKILL.md manually (Claude Code / Pi)
+### CLI Agents — `npx` or `npm install`
+
+One-line install for any AI coding assistant:
 
 ```bash
-# Claude Code
-mkdir -p ~/.claude/skills/deep-research-prompt
-cp skill/SKILL.md ~/.claude/skills/deep-research-prompt/SKILL.md
+npx deep-research-prompt install
+```
 
-# Pi coding agent
-mkdir -p ~/.pi/agent/skills/deep-research-prompt
-cp skill/SKILL.md ~/.pi/agent/skills/deep-research-prompt/SKILL.md
+Or install globally for the `deep-research-prompt` command:
+
+```bash
+npm install -g deep-research-prompt
+deep-research-prompt install
+```
+
+#### Pick your platform
+
+| Platform | Install command |
+|---|---|
+| Claude Code | `deep-research-prompt install` |
+| Codex | `deep-research-prompt install --platform codex` |
+| OpenCode | `deep-research-prompt install --platform opencode` |
+| Cursor | `deep-research-prompt install --platform cursor` |
+| Pi coding agent | `deep-research-prompt install --platform pi` |
+| Kimi Code | `deep-research-prompt install --platform kimi` |
+| Gemini CLI | `deep-research-prompt install --platform gemini` |
+| Aider | `deep-research-prompt install --platform aider` |
+| Trae | `deep-research-prompt install --platform trae` |
+
+#### Project-scoped install
+
+To install the skill into the current repository only (great for teams):
+
+```bash
+deep-research-prompt install --project
+```
+
+This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or the equivalent for your platform) inside your project. Commit it so everyone on your team gets the skill automatically.
+
+#### Install the `.skill` ZIP instead
+
+Some platforms prefer the packaged `.skill` file:
+
+```bash
+deep-research-prompt install --platform claude --zip
+```
+
+#### Uninstall
+
+```bash
+deep-research-prompt uninstall              # remove from default platform
+deep-research-prompt uninstall --platform pi # remove from specific platform
 ```
 
 ---
@@ -151,8 +193,15 @@ Or explicitly mention it:
 | Platform | Status | Install Method |
 |----------|--------|----------------|
 | Claude.ai (Skills) | ✅ Supported | `.skill` file upload |
-| Claude Code | ✅ Supported | Copy `SKILL.md` |
-| Pi coding agent | ✅ Supported | Copy `SKILL.md` |
+| Claude Code | ✅ Supported | `npx deep-research-prompt install` |
+| Codex | ✅ Supported | `npx deep-research-prompt install --platform codex` |
+| OpenCode | ✅ Supported | `npx deep-research-prompt install --platform opencode` |
+| Cursor | ✅ Supported | `npx deep-research-prompt install --platform cursor` |
+| Pi coding agent | ✅ Supported | `npx deep-research-prompt install --platform pi` |
+| Kimi Code | ✅ Supported | `npx deep-research-prompt install --platform kimi` |
+| Gemini CLI | ✅ Supported | `npx deep-research-prompt install --platform gemini` |
+| Aider | ✅ Supported | `npx deep-research-prompt install --platform aider` |
+| Trae | ✅ Supported | `npx deep-research-prompt install --platform trae` |
 
 
 ---
