@@ -1,82 +1,214 @@
-# 🔬 deep-research-prompt
+# 🔬 Deep Research Prompt
 
-> A Claude skill that **grills you first, then writes the research prompt** — so your AI agent actually knows what to research.
+> **Grill first. Write second. Research actually works.**
+>
+> A Claude skill that interrogates you with 5–8 sharp questions, then synthesizes a production-ready research prompt your AI agent swarm can execute autonomously.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet)](https://claude.ai)
-[![Pi Agent](https://img.shields.io/badge/Pi-Agent-green)](https://pi.dev)
+[![npm](https://img.shields.io/badge/npm-deep--research--prompt-red)](https://www.npmjs.com/package/deep-research-prompt)
 
----
-
-## Table of Contents
-
-- [The Problem](#the-problem)
-- [How It Works](#how-it-works)
-- [What Makes This Different](#what-makes-this-different)
-- [Quick Example](#quick-example)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Compatibility](#compatibility)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## The Problem
-
-Most research prompts are vague. You write *"research how to build X"* and the AI gives you a generic overview that misses your actual constraints, stack, and decision context.
+Most research prompts are **vague wishes dressed as instructions**. You write *"research how to build X"* and the AI gives you a generic overview that misses your stack, constraints, and decision context.
 
 **This skill fixes that.**
 
-It interrogates you first — *GrillMe style* — extracts the real context, then synthesizes a production-ready research prompt that an AI agent can execute with **no further clarification**.
+It grills you first — *GrillMe style* — extracts the real context, then synthesizes a structured research prompt that an AI agent can execute with **zero follow-up questions**.
+
+```bash
+npx deep-research-prompt install
+```
+
+Then open your AI assistant and say:
+
+```
+@deep-research-prompt research Firecracker vs Docker for sandbox isolation
+```
+
+**Every prompt shows its reasoning.** No black-box outputs. No "let me know if you need anything else."
 
 ---
 
-## How It Works
+## 🔥 Why Deep Research Prompt?
 
-### Phase 1 — The Grill 🔥
+Most AI "research" today is **a Google search in a trench coat**: dump a vague query, get a generic overview, pray it answers your actual question. That fails when you need to:
 
-Asks **5–8 sharp questions** in one shot across 4 dimensions:
+- Evaluate technologies against **your actual stack and constraints**
+- Make a **specific decision** (not just "learn about X")
+- Get output an **agent can execute** without asking you 20 follow-ups
+- Prevent **scope creep** with explicit in/out boundaries
 
-| Dimension | What it extracts |
-|-----------|-----------------|
-| **Real Problem** | The decision this research unblocks |
-| **Context & Constraints** | Stack, timeline, budget, prior attempts |
-| **Scope Control** | What's in AND out of scope (prevents scope creep) |
-| **Output Shape** | Who reads it, what format, how deep |
+Deep Research Prompt treats research briefing as a **structured interrogation**, not a creative writing exercise.
 
-### Phase 2 — The Synthesis 📄
+| Capability | Typical AI Prompt | Deep Research Prompt |
+|---|---|---|
+| **Input handling** | "Here's a topic, go research it" | 🔥 5–8 targeted questions across 4 dimensions |
+| **Context extraction** | None — agent guesses | 🔥 Stack, timeline, budget, prior attempts, anti-scope |
+| **Output structure** | Wall of text | 🔥 8-section template: mission, scope, questions, deliverables, criteria |
+| **Actionability** | "Let me know what you think" | 🔥 Agent-ready — no further clarification needed |
+| **Scope control** | Creep city | 🔥 Explicit in-scope / out-of-scope sections |
+| **Decision support** | Overview | 🔥 Research questions tied to specific decisions |
+| **Explainability** | Black box generation | 🔥 Every section traces back to grill answers |
 
-Produces a structured research prompt with:
+---
+
+## 🧠 How It Works
+
+Deep Research Prompt implements a **two-phase interrogation pipeline**:
+
+```mermaid
+graph TD
+    A[User: vague topic] --> B[Phase 1: The Grill]
+    B --> C[5–8 questions across 4 dimensions]
+    C --> D[Real Problem, Context, Scope, Output Shape]
+    D --> E[Phase 2: The Synthesis]
+    E --> F[8-section structured prompt]
+    F --> G[Mission, Scope, Questions, Deliverables, Criteria]
+    G --> H[Agent executes with zero follow-up]
+```
+
+### The Four Grill Dimensions
+
+| Dimension | What It Extracts | Example Question |
+|---|---|---|
+| 🔥 **Real Problem** | The decision this research unblocks | "If the research came back perfect, what would you do next?" |
+| ⚙️ **Context & Constraints** | Stack, timeline, budget, prior attempts | "What have you already tried or ruled out?" |
+| 🎯 **Scope Control** | What's in AND out | "What should the research definitely NOT cover?" |
+| 📄 **Output Shape** | Who reads it, what format, how deep | "Who is the primary reader — you, a team, or an AI agent?" |
+
+### The 8-Section Output
+
+Every synthesized prompt includes:
 
 ```
 # Deep Research Prompt: [TITLE]
 
-## Mission Statement
-## Background & Context  
-## Research Scope (in/out)
-## Research Questions (5+ with sub-questions)
-## Deliverables Expected
-## Constraints to Respect
-## Success Criteria
-## Suggested Research Approach
+## Mission Statement          ← 1–2 sentences, specific
+## Background & Context       ← Stack, constraints, prior attempts
+## Research Scope             ← Explicit in-scope / out-of-scope
+## Research Questions         ← 5+ questions, each with 2–3 sub-questions
+## Deliverables Expected      ← Tables, code, comparisons — concrete
+## Constraints to Respect     ← Timeline, budget, non-negotiables
+## Success Criteria           ← Measurable completion conditions
+## Suggested Research Approach ← How an agent should tackle it
 ```
 
 ---
 
-## What Makes This Different
+## 🚀 One-Command Quick Start
 
-| Typical AI Research | With This Skill |
-|---------------------|-----------------|
-| Generic overview | Decision-driven, context-aware |
-| Scope creep | Explicit in/out of scope |
-| No deliverables defined | Concrete tables, code, comparisons |
-| "Let me know if you need anything else" | Actionable by an agent swarm with zero follow-up |
+```bash
+npx deep-research-prompt install
+```
+
+Or install globally:
+
+```bash
+npm install -g deep-research-prompt
+deep-research-prompt install
+```
+
+Then open your AI assistant and type:
+
+```
+@deep-research-prompt research Firecracker vs Docker for sandbox isolation
+```
+
+Or start with a vague idea:
+
+```
+I want to integrate a coding agent into my SaaS product
+```
+
+The skill will grill you, then output a structured prompt you can hand to any agent.
 
 ---
 
-## Quick Example
+## 🛠️ Platform Support
+
+Register the skill with your AI assistant:
+
+| Platform | Install Command |
+|---|---|
+| Claude Code | `deep-research-prompt install` |
+| Codex | `deep-research-prompt install --platform codex` |
+| OpenCode | `deep-research-prompt install --platform opencode` |
+| Cursor | `deep-research-prompt install --platform cursor` |
+| Kimi Code | `deep-research-prompt install --platform kimi` |
+| Gemini CLI | `deep-research-prompt install --platform gemini` |
+| Aider | `deep-research-prompt install --platform aider` |
+| Trae | `deep-research-prompt install --platform trae` |
+| Pi coding agent | `deep-research-prompt install --platform pi` |
+
+### Claude.ai (Web)
+
+1. Download [`skill/deep-research-prompt.skill`](./skill/deep-research-prompt.skill)
+2. In Claude, go to **Settings → Skills → Install from file**
+
+### Project-Scoped Install
+
+Install into the current repo so your team gets it:
+
+```bash
+deep-research-prompt install --project
+```
+
+This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or equivalent for your platform).
+
+### Install the `.skill` ZIP
+
+For platforms that prefer the packaged skill:
+
+```bash
+deep-research-prompt install --platform claude --zip
+```
+
+---
+
+## 📋 Command Reference
+
+| Command | Description |
+|---|---|
+| `deep-research-prompt install` | Install skill for Claude Code (default) |
+| `deep-research-prompt install --platform <name>` | Install for a specific platform |
+| `deep-research-prompt install --project` | Install into current project only |
+| `deep-research-prompt install --zip` | Install the `.skill` ZIP file |
+| `deep-research-prompt uninstall` | Remove from default platform |
+| `deep-research-prompt uninstall --platform <name>` | Remove from specific platform |
+| `deep-research-prompt list` | List all supported platforms |
+| `deep-research-prompt --version` | Show version |
+| `deep-research-prompt --help` | Show help |
+
+---
+
+## 💡 Usage Triggers
+
+The skill fires automatically when you say things like:
+
+- *"Help me research X"*
+- *"I want to investigate Y"*
+- *"Create a research prompt for Z"*
+- *"Deep research on..."*
+- *"I'm evaluating whether to use..."*
+- *"I have this vague idea and need to figure out..."*
+
+Or explicitly:
+
+```
+@deep-research-prompt research Firecracker vs Docker for sandbox isolation
+```
+
+---
+
+## 📚 Examples
+
+| Example | Topic |
+|---------|-------|
+| [Pi SDK Integration](examples/pi-sdk-integration.md) | Integrating Pi SDK headless into a SaaS product |
+| [Forking a Coding Agent](examples/fork-coding-agent.md) | Forking Pi into a private branded tool |
+
+> Want to add your own? Run the skill on a real topic, save the output, and open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Quick Example Walkthrough
 
 **User:** *"I want to research using Pi SDK as a coding agent inside my product"*
 
@@ -94,121 +226,25 @@ Produces a structured research prompt with:
 
 ---
 
-## Installation
+## ✅ Quality Checklist
 
-### Claude.ai (Web) — `.skill` file
+Every output is verified against this checklist before presentation:
 
-1. Download [`skill/deep-research-prompt.skill`](./skill/deep-research-prompt.skill)
-2. In Claude, go to **Settings → Skills**
-3. Click **Install from file** and select the `.skill` file
-
-### CLI Agents — `npx` or `npm install`
-
-One-line install for any AI coding assistant:
-
-```bash
-npx deep-research-prompt install
-```
-
-Or install globally for the `deep-research-prompt` command:
-
-```bash
-npm install -g deep-research-prompt
-deep-research-prompt install
-```
-
-#### Pick your platform
-
-| Platform | Install command |
-|---|---|
-| Claude Code | `deep-research-prompt install` |
-| Codex | `deep-research-prompt install --platform codex` |
-| OpenCode | `deep-research-prompt install --platform opencode` |
-| Cursor | `deep-research-prompt install --platform cursor` |
-| Pi coding agent | `deep-research-prompt install --platform pi` |
-| Kimi Code | `deep-research-prompt install --platform kimi` |
-| Gemini CLI | `deep-research-prompt install --platform gemini` |
-| Aider | `deep-research-prompt install --platform aider` |
-| Trae | `deep-research-prompt install --platform trae` |
-
-#### Project-scoped install
-
-To install the skill into the current repository only (great for teams):
-
-```bash
-deep-research-prompt install --project
-```
-
-This writes to `.claude/skills/deep-research-prompt/SKILL.md` (or the equivalent for your platform) inside your project. Commit it so everyone on your team gets the skill automatically.
-
-#### Install the `.skill` ZIP instead
-
-Some platforms prefer the packaged `.skill` file:
-
-```bash
-deep-research-prompt install --platform claude --zip
-```
-
-#### Uninstall
-
-```bash
-deep-research-prompt uninstall              # remove from default platform
-deep-research-prompt uninstall --platform pi # remove from specific platform
-```
+- [ ] Mission statement is 1–2 sentences, not vague
+- [ ] At least 5 research questions, each with 2–3 sub-questions
+- [ ] Out-of-scope section is filled (prevents scope creep)
+- [ ] Deliverables are concrete (tables, code, comparisons)
+- [ ] Success criteria are measurable
+- [ ] Prompt is actionable by an AI agent with no further clarification
 
 ---
 
-## Usage
+## 🤝 Contributing
 
-The skill triggers automatically when you say things like:
-
-- *"Help me research X"*
-- *"I want to investigate Y"*  
-- *"Create a research prompt for Z"*
-- *"Deep research on..."*
-- *"I'm evaluating whether to use..."*
-- *"I have this vague idea and need to figure out..."*
-
-Or explicitly mention it:
-
+```bash
+git clone https://github.com/KJ-AIML/deep-research-prompt.git
+cd deep-research-prompt
 ```
-@deep-research-prompt research Firecracker vs Docker for sandbox isolation
-```
-
----
-
-## Examples
-
-| Example | Topic |
-|---------|-------|
-| [Pi SDK Integration](examples/pi-sdk-integration.md) | Integrating Pi SDK headless into a SaaS product |
-| [Forking a Coding Agent](examples/fork-coding-agent.md) | Forking Pi into a private branded tool |
-
-> Want to add your own? See [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## Compatibility
-
-| Platform | Status | Install Method |
-|----------|--------|----------------|
-| Claude.ai (Skills) | ✅ Supported | `.skill` file upload |
-| Claude Code | ✅ Supported | `npx deep-research-prompt install` |
-| Codex | ✅ Supported | `npx deep-research-prompt install --platform codex` |
-| OpenCode | ✅ Supported | `npx deep-research-prompt install --platform opencode` |
-| Cursor | ✅ Supported | `npx deep-research-prompt install --platform cursor` |
-| Pi coding agent | ✅ Supported | `npx deep-research-prompt install --platform pi` |
-| Kimi Code | ✅ Supported | `npx deep-research-prompt install --platform kimi` |
-| Gemini CLI | ✅ Supported | `npx deep-research-prompt install --platform gemini` |
-| Aider | ✅ Supported | `npx deep-research-prompt install --platform aider` |
-| Trae | ✅ Supported | `npx deep-research-prompt install --platform trae` |
-
-
----
-
-## Contributing
-
-PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 **Top contribution ideas:**
 
@@ -217,9 +253,10 @@ PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 - 📦 **Domain-specific templates** — add `references/` folders for specialized research
 - 🌍 **Translations** — help localize the skill
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
 ---
 
-## License
+## 📄 License
 
-MIT — use it, fork it, embed it in your product.
-
+MIT © 2026 deep-research-prompt Contributors
